@@ -27,12 +27,6 @@ jobs:
       uses: Azure/login@v1
       with:
         # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
-        creds: 
-    
-    - name: Azure CLI Action
-      uses: Azure/cli@1.0.4
-      with:
-        # Specify the script here
-        inlineScript: |
-         az login
-        # Azure CLI version to be used to execute the script. If not provided, latest version is used
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - run: |
+      az aks get-versions --location westus2
