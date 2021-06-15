@@ -13,4 +13,4 @@ for version in ${VERSIONS}; do
 	fi
 done
 
-# git push --tags
+git push --tags
